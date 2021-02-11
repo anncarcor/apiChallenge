@@ -1,0 +1,32 @@
+<%- include("partials/header") -%>
+
+
+<div class="main">
+    <h1>FACEMASKS</h1>
+    </div>
+<div id="facemaskData" class="data" >
+    <% for(var i=0; i < facemaskData.length; i++) { %>  
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Color</th> 
+                <th>Price</th>
+                <th>Manufacturer</th>
+                <th>Availibilty</th>
+              </tr>
+            <tr>
+                <td><p><%= facemaskData[i].name%></p></td>
+                <td><p><%= facemaskData[i].color%></p></td>
+                <td><p>€ <%= facemaskData[i].price%></p></td>
+                <td><p><%= facemaskData[i].manufacturer%></p></td>
+                <td><form action="/availability" method="POST">
+                <input class="form-check-input" type="checkbox" value=" <%= facemaskData[i].id%>" name="itemID">
+                <button type="submit" class="btn btn-sm btn-dark" value="<%= facemaskData[i].manufacturer%>" name="checkAvailibilty">Check availability</button>
+            </form></td>
+        </tr>
+        </table>
+    <hr>
+    <% } %>
+    </div>
+
+<%- include("partials/footer") -%>

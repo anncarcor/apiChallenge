@@ -1,0 +1,33 @@
+<%- include("partials/header") -%>
+
+
+<div class="main">
+<h1>GLOVES</h1>
+</div>
+<div id="glovesData" class="data" >
+    
+        <% for(var i=0; i < glovesData.length; i++) { %> 
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Color</th> 
+                <th>Price</th>
+                <th>Manufacturer</th>
+                <th>Availibilty</th>
+              </tr>
+            <tr>
+                <td><p><%= glovesData[i].name%></p></td>
+                <td><p><%= glovesData[i].color%></p></td>
+                <td><p>€ <%= glovesData[i].price%></p></td>
+                <td><p><%= glovesData[i].manufacturer%></p></td>
+                <td><form action="/availability" method="POST">
+                <input class="form-check-input" type="checkbox" value=" <%= glovesData[i].id%>" name="itemID">
+                <button type="submit" class="btn btn-sm btn-dark" value="<%= glovesData[i].manufacturer%>" name="checkAvailibilty">Check availability</button>
+            </form></td>
+        </tr>
+        </table>
+    <hr>
+    <% } %>
+    </div>
+
+<%- include("partials/footer") -%>

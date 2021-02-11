@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+}
+
+td{
+    width: 20%;
+}
+
+.selectBar{
+    margin-top: 1.5rem;
+    width: 30%;
+    display: flex;
+}
+
+.selectBar button{
+    margin-left: 1rem;
+    width: 5rem;
+}
+
+.main{
+    margin-top: 1.5rem;
+}
